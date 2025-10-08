@@ -1,0 +1,396 @@
+/* ===== Exact Visual Clone UI Styling (brand2social look) ===== */
+
+/* Base & Layout */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f3f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.page-wrapper {
+  width: 1200px; /* Fixed width for desktops/laptops */
+  max-width: 100%; /* Prevent overflow on smaller screens */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Animated Text Fill for H1 Titles */
+.animated-title {
+  font: 400 1em/1.5 "Neuton";
+  background: #090d00;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: block;
+  border: 4px double rgba(255, 255, 255, 0.25);
+  border-width: 4px 0;
+  padding: 1.2em 0;
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.animated-title span {
+  font: 700 2em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+  /* Clip Background Image */
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Hardware acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate the moving background */
+@-webkit-keyframes aitf {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+p {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.split-view {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Panels */
+.social-profile,
+.post-preview {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-profile:hover,
+.post-preview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Platform Buttons (Left) */
+.platform {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 17px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.platform:hover {
+    background: #eaf2ff;
+    transform: scale(1.02);
+}
+
+.platform.active {
+    border-color: #1a73e8;
+    background: #e3f2fd;
+    color: #1a73e8;
+}
+
+.platform-logo {
+    width: 22px;
+    height: 22px;
+}
+
+.close-btn {
+    font-size: 16px;
+    color: #777;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #e53935;
+}
+
+/* Live Text Box */
+.live-text-box textarea {
+    width: 90%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    resize: vertical;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transition: border 0.2s;
+}
+
+.live-text-box textarea:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+/* Upload Area */
+.upload-area {
+    position: relative;
+    border: 2px dashed #bbb;
+    border-radius: 10px;
+    background: #f9fafc;
+    padding: 18px;
+    text-align: center;
+    color: #666;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.upload-area:hover {
+    border-color: #1a73e8;
+    background: #f1f7ff;
+}
+
+.uploaded-files {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.uploaded-item {
+    position: relative;
+}
+
+.uploaded-item img,
+.uploaded-item video {
+    border-radius: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.file-close-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 1px 5px;
+    cursor: pointer;
+    color: #e53935;
+    font-weight: bold;
+}
+
+/* Platform Buttons (Right Preview Section) */
+.platform-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.platform-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #f5f5f5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: border 0.2s, background 0.2s;
+}
+
+.platform-btn.active {
+    border-color: #1a73e8;
+    opacity: 1;
+    background: #fff;
+}
+
+.platform-btn:hover {
+    border-color: #1a73e8;
+     opacity: 1;
+}
+
+.platform-btn img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Post Type Buttons */
+.post-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.post-type-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+    background: #e3f2fd;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.post-type-btn.active {
+    background: #1a73e8;
+    color: #fff;
+}
+
+.post-type-btn:hover {
+    background: #1a73e8;
+    color: #fff;
+}
+
+/* Preview Area */
+.preview-box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.platform-logo-preview {
+    width: 26px;
+    height: 26px;
+}
+
+.preview-timestamp {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.alert-box {
+    display: none;
+    background: #fff6e0;
+    color: #8a5a00;
+    border: 1px solid #ffcf5d;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.preview-text p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.interactions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.interactions button {
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-right: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.interactions button:hover {
+    background: #e3f2fd;
+}
+.interactions button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.more-previews {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.more-previews h3 {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.preview-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.preview-btn {
+    padding: 10px 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #000000;
+    transition: background 0.2s ease;
+}
+
+.preview-btn:hover {
+    background: #eaf2ff;
+}

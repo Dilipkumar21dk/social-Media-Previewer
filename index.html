@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Social Media Post Previewer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <h1 class="animated-title"><span>Instant Social Media Post Previewer</span></h1>
+            <h1 class="animated-title"><span> Your Posts in HD Before You Share!</span></h1>
+            <p style="text-align: center;font-weight: bold;">Use this tool to see exactly how your post will look when published.</p>
+
+            <div class="split-view">
+                <!-- Social Profile Section -->
+                <div class="social-profile">
+                    <h3 style="text-align: center;">Social Profile</h3>
+                    <button type="button" name="platform" value="facebook" class="platform">
+                        <img src="asserts/facebook.svg" alt="Facebook Logo" class="platform-logo">Facebook
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="instagram" class="platform">
+                        <img src="asserts/instagram.svg" alt="Instagram Logo" class="platform-logo">Instagram
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="twitter" class="platform">
+                        <img src="asserts/twitter.svg" alt="Twitter Logo" class="platform-logo">Twitter
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="linkedin" class="platform">
+                        <img src="asserts/linked.svg" alt="LinkedIn Logo" class="platform-logo">LinkedIn
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="youtube" class="platform">
+                        <img src="asserts/youtube.png" alt="YouTube Logo" class="platform-logo">YouTube
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="tiktok" class="platform">
+                        <img src="asserts/tiktok.svg" alt="TikTok Logo" class="platform-logo">TikTok
+                        <span class="close-btn">&times;</span>
+                    </button>
+                    <button type="button" name="platform" value="pinterest" class="platform">
+                        <img src="asserts/pinterest.svg" alt="Pinterest Logo" class="platform-logo">Pinterest
+                        <span class="close-btn">&times;</span>
+                    </button>
+
+                    <!-- Live Text -->
+                    <div class="live-text-box">
+                        <textarea id="liveText" rows="3" placeholder="Type your post text here..."></textarea>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="upload-area">
+                        <p>Drag & drop or click to upload</p>
+                        <input type="file" id="fileInput" accept="image/*,video/*" multiple>
+                        <div id="uploadedFiles" class="uploaded-files"></div>
+                    </div>
+                </div>
+
+                <!-- Post Preview Section -->
+                <div class="post-preview">
+                    <h3 style="text-align: center;">Post Preview</h3>
+                    <div class="platform-buttons post-platform-buttons">
+                        <button type="button" class="platform-btn" data-platform="facebook">
+                            <img src="asserts/facebook.svg" alt="Facebook">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="instagram">
+                            <img src="asserts/instagram.svg" alt="Instagram">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="twitter">
+                            <img src="asserts/twitter.svg" alt="Twitter">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="linkedin">
+                            <img src="asserts/linked.svg" alt="LinkedIn">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="youtube">
+                            <img src="asserts/youtube.png" alt="YouTube">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="tiktok">
+                            <img src="asserts/tiktok.svg" alt="TikTok">
+                        </button>
+                        <button type="button" class="platform-btn" data-platform="pinterest">
+                            <img src="asserts/pinterest.svg" alt="Pinterest">
+                        </button>
+                    </div>
+
+                    <!-- Post Type Buttons -->
+                    <div class="preview-content">
+                        <div class="post-type-buttons">
+                            <button type="button" class="post-type-btn" data-type="post">Post</button>
+                            <button type="button" class="post-type-btn" data-type="story">Story</button>
+                            <button type="button" class="post-type-btn" data-type="reel">Reel</button>
+                            <button type="button" class="post-type-btn" data-type="video">Video</button>
+                            <button type="button" class="post-type-btn" data-type="shorts">Shorts</button>
+                            <button type="button" class="post-type-btn" data-type="pin">Pin</button>
+                        </div>
+
+                        <input type="hidden" id="postType" value="">
+
+                        <div id="previewBox" class="preview-box">
+                            <div class="preview-header">
+                                <img id="previewLogo" src="asserts/facebook.svg" alt="Facebook Logo" class="platform-logo-preview">
+                                <span id="previewPlatformName">Facebook</span>
+                            </div>
+
+                            <div class="preview-timestamp">Just now</div>
+
+                            <div id="alertBox" class="alert-box" style="display: none;"></div>
+
+                            <div id="previewText" class="preview-text">
+                                <p>Ready to crush your fitness goals? Join us at Apex Gym for a free trial session! 🌟 #FitnessMotivation #GymLife</p>
+                            </div>
+
+                            <div id="previewInteractions" class="interactions">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-previews">
+                <h3>More Free Social Media Previews</h3>
+                <div class="preview-buttons-row">
+                    <button class="preview-btn">Facebook Post Preview</button>
+                    <button class="preview-btn">Instagram Post Preview</button>
+                    <button class="preview-btn">Twitter Post Preview</button>
+                    <button class="preview-btn">YouTube Post Preview</button>
+                </div>
+                <div class="preview-buttons-row">
+                    <button class="preview-btn">LinkedIn Post Preview</button>
+                    <button class="preview-btn">TikTok Post Preview</button>
+                    <button class="preview-btn">Pinterest Post Preview</button>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
